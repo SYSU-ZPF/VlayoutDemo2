@@ -398,76 +398,76 @@ public class VLayoutActivity extends Activity {
 //            });
 //        }
 
-        {
-            RangeGridLayoutHelper layoutHelper = new RangeGridLayoutHelper(4);
-            layoutHelper.setBgColor(Color.GREEN);
-            layoutHelper.setWeights(new float[]{20f, 26.665f});
-            layoutHelper.setPadding(15, 15, 15, 15);
-            layoutHelper.setMargin(15, 15, 15, 15);
-            layoutHelper.setHGap(10);
-            layoutHelper.setVGap(10);
-            GridRangeStyle rangeStyle = new GridRangeStyle();
-            rangeStyle.setBgColor(Color.RED);
-            rangeStyle.setSpanCount(2);
-            rangeStyle.setWeights(new float[]{46.665f});
-            rangeStyle.setPadding(15, 15, 15, 15);
-            rangeStyle.setMargin(15, 15, 15, 15);
-            rangeStyle.setHGap(5);
-            rangeStyle.setVGap(5);
-            layoutHelper.addRangeStyle(4, 7, rangeStyle);
-            GridRangeStyle rangeStyle1 = new GridRangeStyle();
-            rangeStyle1.setBgColor(Color.YELLOW);
-            rangeStyle1.setSpanCount(2);
-            rangeStyle1.setWeights(new float[]{46.665f});
-            rangeStyle1.setPadding(15, 15, 15, 15);
-            rangeStyle1.setMargin(15, 15, 15, 15);
-            rangeStyle1.setHGap(5);
-            rangeStyle1.setVGap(5);
-            layoutHelper.addRangeStyle(8, 11, rangeStyle1);
-            adapters.add(new SubAdapter(this, layoutHelper, 16));
+//        {
+//            RangeGridLayoutHelper layoutHelper = new RangeGridLayoutHelper(4);
+//            layoutHelper.setBgColor(Color.GREEN);
+//            layoutHelper.setWeights(new float[]{20f, 26.665f});
+//            layoutHelper.setPadding(15, 15, 15, 15);
+//            layoutHelper.setMargin(15, 15, 15, 15);
+//            layoutHelper.setHGap(10);
+//            layoutHelper.setVGap(10);
+//            GridRangeStyle rangeStyle = new GridRangeStyle();
+//            rangeStyle.setBgColor(Color.RED);
+//            rangeStyle.setSpanCount(2);
+//            rangeStyle.setWeights(new float[]{46.665f});
+//            rangeStyle.setPadding(15, 15, 15, 15);
+//            rangeStyle.setMargin(15, 15, 15, 15);
+//            rangeStyle.setHGap(5);
+//            rangeStyle.setVGap(5);
+//            layoutHelper.addRangeStyle(4, 7, rangeStyle);
+//            GridRangeStyle rangeStyle1 = new GridRangeStyle();
+//            rangeStyle1.setBgColor(Color.YELLOW);
+//            rangeStyle1.setSpanCount(2);
+//            rangeStyle1.setWeights(new float[]{46.665f});
+//            rangeStyle1.setPadding(15, 15, 15, 15);
+//            rangeStyle1.setMargin(15, 15, 15, 15);
+//            rangeStyle1.setHGap(5);
+//            rangeStyle1.setVGap(5);
+//            layoutHelper.addRangeStyle(8, 11, rangeStyle1);
+//            adapters.add(new SubAdapter(this, layoutHelper, 16));
+//
+//        }
 
-        }
+//        if (SINGLE_LAYOUT) {
+//            SingleLayoutHelper layoutHelper = new SingleLayoutHelper();
+//            layoutHelper.setBgColor(Color.rgb(135, 225, 90));
+//            layoutHelper.setAspectRatio(4);
+//            layoutHelper.setMargin(10, 20, 10, 20);
+//            layoutHelper.setPadding(10, 10, 10, 10);
+//            adapters.add(new SubAdapter(this, layoutHelper, 1, new LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 100)));
+//        }
 
-        if (SINGLE_LAYOUT) {
-            SingleLayoutHelper layoutHelper = new SingleLayoutHelper();
-            layoutHelper.setBgColor(Color.rgb(135, 225, 90));
-            layoutHelper.setAspectRatio(4);
-            layoutHelper.setMargin(10, 20, 10, 20);
-            layoutHelper.setPadding(10, 10, 10, 10);
-            adapters.add(new SubAdapter(this, layoutHelper, 1, new LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 100)));
-        }
+//        if (COLUMN_LAYOUT) {
+//            ColumnLayoutHelper layoutHelper = new ColumnLayoutHelper();
+//            layoutHelper.setBgColor(0xff00f0f0);
+//            layoutHelper.setWeights(new float[]{40.0f, 10, 40});
+//            adapters.add(new SubAdapter(this, layoutHelper, 9) {
+//
+//                @Override
+//                public void onBindViewHolder(MainViewHolder holder, int position) {
+//                    if (position == 0) {
+//                        LayoutParams layoutParams = new LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 300);
+//                        layoutParams.mAspectRatio = 4;
+//                        holder.itemView.setLayoutParams(layoutParams);
+//                    } else {
+//                        LayoutParams layoutParams = new LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 300);
+//                        layoutParams.mAspectRatio = Float.NaN;
+//                        holder.itemView.setLayoutParams(layoutParams);
+//                    }
+//                }
+//
+//            });
+//        }
 
-        if (COLUMN_LAYOUT) {
-            ColumnLayoutHelper layoutHelper = new ColumnLayoutHelper();
-            layoutHelper.setBgColor(0xff00f0f0);
-            layoutHelper.setWeights(new float[]{40.0f, Float.NaN, 40});
-            adapters.add(new SubAdapter(this, layoutHelper, 5) {
-
-                @Override
-                public void onBindViewHolder(MainViewHolder holder, int position) {
-                    if (position == 0) {
-                        LayoutParams layoutParams = new LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 300);
-                        layoutParams.mAspectRatio = 4;
-                        holder.itemView.setLayoutParams(layoutParams);
-                    } else {
-                        LayoutParams layoutParams = new LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 300);
-                        layoutParams.mAspectRatio = Float.NaN;
-                        holder.itemView.setLayoutParams(layoutParams);
-                    }
-                }
-
-            });
-        }
-
-        if (ONEN_LAYOUT) {
-            OnePlusNLayoutHelper helper = new OnePlusNLayoutHelper();
-            helper.setBgColor(0xff876384);
-            helper.setAspectRatio(4.0f);
-            helper.setColWeights(new float[]{40f, 45f});
-            helper.setMargin(10, 20, 10, 20);
-            helper.setPadding(10, 10, 10, 10);
-            adapters.add(new SubAdapter(this, helper, 2));
-        }
+//        if (ONEN_LAYOUT) {
+//            OnePlusNLayoutHelper helper = new OnePlusNLayoutHelper();
+//            helper.setBgColor(0xff876384);
+//            helper.setAspectRatio(4.0f);
+//            helper.setColWeights(new float[]{40f, 45f});
+//            helper.setMargin(10, 20, 10, 20);
+//            helper.setPadding(10, 10, 10, 10);
+//            adapters.add(new SubAdapter(this, helper, 2));
+//        }
 
         if (ONEN_LAYOUT) {
             OnePlusNLayoutHelper helper = new OnePlusNLayoutHelper();
@@ -477,7 +477,7 @@ public class VLayoutActivity extends Activity {
             helper.setRowWeight(30f);
             helper.setMargin(10, 20, 10, 20);
             helper.setPadding(10, 10, 10, 10);
-            adapters.add(new SubAdapter(this, helper, 4) {
+            adapters.add(new SubAdapter(this, helper, 5) {
                 @Override
                 public void onBindViewHolder(MainViewHolder holder, int position) {
                     super.onBindViewHolder(holder, position);
@@ -499,11 +499,11 @@ public class VLayoutActivity extends Activity {
             OnePlusNLayoutHelper helper = new OnePlusNLayoutHelper();
             helper.setBgColor(0xff87e543);
             helper.setAspectRatio(1.8f);
-            helper.setColWeights(new float[]{33.33f, 50f, 40f});
+            helper.setColWeights(new float[]{30f, 30f, 50f});
             helper.setMargin(10, 20, 10, 20);
             helper.setPadding(10, 10, 10, 10);
             LayoutParams lp = new LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
-            adapters.add(new SubAdapter(this, helper, 3, lp) {
+            adapters.add(new SubAdapter(this, helper, 4, lp) {
                 @Override
                 public void onBindViewHolder(MainViewHolder holder, int position) {
                     super.onBindViewHolder(holder, position);
