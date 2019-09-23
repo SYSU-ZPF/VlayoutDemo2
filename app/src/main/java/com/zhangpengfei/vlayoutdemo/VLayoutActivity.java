@@ -469,114 +469,114 @@ public class VLayoutActivity extends Activity {
 //            adapters.add(new SubAdapter(this, helper, 2));
 //        }
 
-        if (ONEN_LAYOUT) {
-            OnePlusNLayoutHelper helper = new OnePlusNLayoutHelper();
-            helper.setBgColor(0xffef8ba3);
-            helper.setAspectRatio(2.0f);
-            helper.setColWeights(new float[]{40f});
-            helper.setRowWeight(30f);
-            helper.setMargin(10, 20, 10, 20);
-            helper.setPadding(10, 10, 10, 10);
-            adapters.add(new SubAdapter(this, helper, 5) {
-                @Override
-                public void onBindViewHolder(MainViewHolder holder, int position) {
-                    super.onBindViewHolder(holder, position);
-                    LayoutParams lp = (LayoutParams) holder.itemView.getLayoutParams();
-                    if (position == 0) {
-                        lp.rightMargin = 1;
-                    } else if (position == 1) {
+//        if (ONEN_LAYOUT) {
+//            OnePlusNLayoutHelper helper = new OnePlusNLayoutHelper();
+//            helper.setBgColor(0xffef8ba3);
+//            helper.setAspectRatio(2.0f);
+//            helper.setColWeights(new float[]{40f});
+//            helper.setRowWeight(30f);
+//            helper.setMargin(10, 20, 10, 20);
+//            helper.setPadding(10, 10, 10, 10);
+//            adapters.add(new SubAdapter(this, helper, 5) {
+//                @Override
+//                public void onBindViewHolder(MainViewHolder holder, int position) {
+//                    super.onBindViewHolder(holder, position);
+//                    LayoutParams lp = (LayoutParams) holder.itemView.getLayoutParams();
+//                    if (position == 0) {
+//                        lp.rightMargin = 1;
+//                    } else if (position == 1) {
+//
+//                    } else if (position == 2) {
+//                        lp.topMargin = 1;
+//                        lp.rightMargin = 1;
+//                    }
+//                }
+//            });
+//        }
 
-                    } else if (position == 2) {
-                        lp.topMargin = 1;
-                        lp.rightMargin = 1;
-                    }
-                }
-            });
-        }
+//        if (ONEN_LAYOUT) {
+////            adapters.add(new SubAdapter(this, new OnePlusNLayoutHelper(), 0));
+//            OnePlusNLayoutHelper helper = new OnePlusNLayoutHelper();
+//            helper.setBgColor(0xff87e543);
+//            helper.setAspectRatio(1.8f);
+//            helper.setColWeights(new float[]{30f, 30f, 30f});
+//            helper.setMargin(10, 20, 10, 20);
+//            helper.setPadding(10, 10, 10, 10);
+//            LayoutParams lp = new LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+//            adapters.add(new SubAdapter(this, helper, 4, lp) {
+//                @Override
+//                public void onBindViewHolder(MainViewHolder holder, int position) {
+//                    super.onBindViewHolder(holder, position);
+//                    LayoutParams lp = (LayoutParams) holder.itemView.getLayoutParams();
+//                    if (position == 0) {
+//                        lp.rightMargin = 1;
+//                    }
+//                }
+//            });
+//        }
+//
+//        if (COLUMN_LAYOUT) {
+//            adapters.add(new SubAdapter(this, new ColumnLayoutHelper(), 0));
+//            adapters.add(new SubAdapter(this, new ColumnLayoutHelper(), 4));
+//        }
 
-        if (ONEN_LAYOUT) {
-            adapters.add(new SubAdapter(this, new OnePlusNLayoutHelper(), 0));
-            OnePlusNLayoutHelper helper = new OnePlusNLayoutHelper();
-            helper.setBgColor(0xff87e543);
-            helper.setAspectRatio(1.8f);
-            helper.setColWeights(new float[]{30f, 30f, 50f});
-            helper.setMargin(10, 20, 10, 20);
-            helper.setPadding(10, 10, 10, 10);
-            LayoutParams lp = new LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
-            adapters.add(new SubAdapter(this, helper, 4, lp) {
-                @Override
-                public void onBindViewHolder(MainViewHolder holder, int position) {
-                    super.onBindViewHolder(holder, position);
-                    LayoutParams lp = (LayoutParams) holder.itemView.getLayoutParams();
-                    if (position == 0) {
-                        lp.rightMargin = 1;
-                    }
-                }
-            });
-        }
-
-        if (COLUMN_LAYOUT) {
-            adapters.add(new SubAdapter(this, new ColumnLayoutHelper(), 0));
-            adapters.add(new SubAdapter(this, new ColumnLayoutHelper(), 4));
-        }
-
-        if (FIX_LAYOUT) {
-            FixLayoutHelper layoutHelper = new FixLayoutHelper(10, 10);
-            adapters.add(new SubAdapter(this, layoutHelper, 0));
-
-            layoutHelper = new FixLayoutHelper(FixLayoutHelper.TOP_RIGHT, 20, 20);
-
-            adapters.add(new SubAdapter(this, layoutHelper, 1) {
-                @Override
-                public void onBindViewHolder(MainViewHolder holder, int position) {
-                    super.onBindViewHolder(holder, position);
-                    LayoutParams layoutParams = new LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 200);
-                    holder.itemView.setLayoutParams(layoutParams);
-                }
-            });
-        }
-
-        //if (STICKY_LAYOUT) {
-        //    StickyLayoutHelper layoutHelper = new StickyLayoutHelper(false);
-        //    adapters.add(new SubAdapter(this, layoutHelper, 0));
-        //    layoutHelper = new StickyLayoutHelper(false);
-        //    layoutHelper.setOffset(100);
-        //    adapters.add(new SubAdapter(this, layoutHelper, 1, new LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 100)));
-        //}
-
-        if (GRID_LAYOUT) {
-            GridLayoutHelper layoutHelper = new GridLayoutHelper(2);
-            layoutHelper.setMargin(7, 0, 7, 0);
-            layoutHelper.setWeights(new float[]{46.665f});
-            layoutHelper.setHGap(3);
-            adapters.add(new SubAdapter(this, layoutHelper, 2));
-
-            layoutHelper = new GridLayoutHelper(4);
-            layoutHelper.setWeights(new float[]{20f, 26.665f});
-            layoutHelper.setMargin(7, 0, 7, 0);
-            layoutHelper.setHGap(3);
-            adapters.add(new SubAdapter(this, layoutHelper, 8));
-        }
-
-
-        if (GRID_LAYOUT) {
-            adapters.add(new SubAdapter(this, new GridLayoutHelper(4), 0));
-
-            GridLayoutHelper helper = new GridLayoutHelper(4);
-            helper.setAspectRatio(4f);
-            //helper.setColWeights(new float[]{40, 20, 30, 30});
-            // helper.setMargin(0, 10, 0, 10);
-            helper.setGap(10);
-            adapters.add(new SubAdapter(this, helper, 80) {
-                @Override
-                public void onBindViewHolder(MainViewHolder holder, int position) {
-                    super.onBindViewHolder(holder, position);
-                    LayoutParams lp = (LayoutParams) holder.itemView.getLayoutParams();
-                    // lp.bottomMargin = 1;
-                    // lp.rightMargin = 1;
-                }
-            });
-        }
+//        if (FIX_LAYOUT) {
+//            FixLayoutHelper layoutHelper = new FixLayoutHelper(10, 10);
+//            adapters.add(new SubAdapter(this, layoutHelper, 0));
+//
+//            layoutHelper = new FixLayoutHelper(FixLayoutHelper.TOP_RIGHT, 20, 20);
+//
+//            adapters.add(new SubAdapter(this, layoutHelper, 1) {
+//                @Override
+//                public void onBindViewHolder(MainViewHolder holder, int position) {
+//                    super.onBindViewHolder(holder, position);
+//                    LayoutParams layoutParams = new LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 200);
+//                    holder.itemView.setLayoutParams(layoutParams);
+//                }
+//            });
+//        }
+//
+//        //if (STICKY_LAYOUT) {
+//        //    StickyLayoutHelper layoutHelper = new StickyLayoutHelper(false);
+//        //    adapters.add(new SubAdapter(this, layoutHelper, 0));
+//        //    layoutHelper = new StickyLayoutHelper(false);
+//        //    layoutHelper.setOffset(100);
+//        //    adapters.add(new SubAdapter(this, layoutHelper, 1, new LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 100)));
+//        //}
+//
+//        if (GRID_LAYOUT) {
+//            GridLayoutHelper layoutHelper = new GridLayoutHelper(2);
+//            layoutHelper.setMargin(7, 0, 7, 0);
+//            layoutHelper.setWeights(new float[]{46.665f});
+//            layoutHelper.setHGap(3);
+//            adapters.add(new SubAdapter(this, layoutHelper, 2));
+//
+//            layoutHelper = new GridLayoutHelper(4);
+//            layoutHelper.setWeights(new float[]{20f, 26.665f});
+//            layoutHelper.setMargin(7, 0, 7, 0);
+//            layoutHelper.setHGap(3);
+//            adapters.add(new SubAdapter(this, layoutHelper, 8));
+//        }
+//
+//
+//        if (GRID_LAYOUT) {
+//            adapters.add(new SubAdapter(this, new GridLayoutHelper(4), 0));
+//
+//            GridLayoutHelper helper = new GridLayoutHelper(4);
+//            helper.setAspectRatio(4f);
+//            //helper.setColWeights(new float[]{40, 20, 30, 30});
+//            // helper.setMargin(0, 10, 0, 10);
+//            helper.setGap(10);
+//            adapters.add(new SubAdapter(this, helper, 80) {
+//                @Override
+//                public void onBindViewHolder(MainViewHolder holder, int position) {
+//                    super.onBindViewHolder(holder, position);
+//                    LayoutParams lp = (LayoutParams) holder.itemView.getLayoutParams();
+//                    // lp.bottomMargin = 1;
+//                    // lp.rightMargin = 1;
+//                }
+//            });
+//        }
 
         if (FIX_LAYOUT) {
             adapters.add(new SubAdapter(this, new ScrollFixLayoutHelper(20, 20), 1) {
@@ -589,8 +589,8 @@ public class VLayoutActivity extends Activity {
             });
         }
 
-        if (LINEAR_LAYOUT)
-            adapters.add(new SubAdapter(this, new LinearLayoutHelper(), 10));
+//        if (LINEAR_LAYOUT)
+//            adapters.add(new SubAdapter(this, new LinearLayoutHelper(), 10));
 
         if (GRID_LAYOUT) {
             GridLayoutHelper helper = new GridLayoutHelper(3);
